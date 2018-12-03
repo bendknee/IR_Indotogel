@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IndoTogel</title>
+    <link rel="stylesheet" id="tt-easy-google-fonts-css" href="https://fonts.googleapis.com/css?family=Open+Sans%3Aregular%7CMuli%3Aregular%2C300&amp;subset=latin%2Call%2Call&amp;ver=4.7.6" type="text/css" media="all">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<style>
+    #bodySearch {
+        font-family: 'Muli';
+        color :  #68D1D4;
+    }
+
+    #myInput {
+        background-image: url('https://www.w3schools.com/css/searchicon.png');
+        background-position: 10px 12px;
+        background-repeat: no-repeat;
+        width: 100%;
+        font-size: 16px;
+        padding: 12px 20px 12px 40px;
+        border: 1px solid #ddd;
+        margin-bottom: 12px;
+        color: black;
+        opacity: 0.7;
+        border-radius : 20px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5), 0 0 4px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    .navbar .navbar-brand { 
+        padding-top: 0px;
+    }
+    .navbar .navbar-brand img {
+        height: 50px;
+    }
+    .containerMargin{
+        margin-left: 2%;
+    }
+
+    .containerWidth{
+        width:30%;
+        margin-bottom:2%;
+    }
+
+    #myBtn {
+        height: 40px;
+        border-radius : 20px;
+    }
+
+</style>
+
+<body>
+    <div class="container containerMargin" id="bodySearch">
+
+        <h1 style="text-align: center; font-size:40px; text-shadow: 1px 0 rgb(82, 231, 236), 0 1px rgb(82, 231, 236), 1px 0 rgb(82, 231, 236), 0 1px rgb(82, 231, 236);" class="jumbotron lead"><strong>Search Doctor</strong></h1>
+        <label for="myInput">Kata/Kalimat:</label>
+        <input type="text" id="myInput" placeholder="Masukkan Kata/Kalimat" title="Doctor Name">
+    
+        <button id="myBtn" onclick="myFunction()" class="btn btn-primary btn-block containerWidth" style="background-color:rgba(69, 57, 233, 0.774)"><strong>Reveal</strong></button>
+        
+</body>
+<script>
+    var input = document.getElementById("myInput");
+    input.addEventListener("keyup", function(event) {
+        event.preventDefault();
+        if (event.keyCode === 13) {
+            document.getElementById("myBtn").click();
+        }
+    });
+
+</script>
+
+</html>
