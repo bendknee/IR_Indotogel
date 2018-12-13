@@ -61,20 +61,14 @@
         <h1 style="text-align: center; font-size:40px; text-shadow: 1px 0 rgb(82, 231, 236), 0 1px rgb(82, 231, 236), 1px 0 rgb(82, 231, 236), 0 1px rgb(82, 231, 236);" class="jumbotron lead"><strong>IndoTogel</strong></h1>
         <h4 style="text-align: center; font-size:40px; text-shadow: 1px 0 rgb(82, 231, 236), 0 1px rgb(82, 231, 236), 1px 0 rgb(82, 231, 236), 0 1px rgb(82, 231, 236);" class="lead">Indonesia Traditional Language Analysis</h4>
         <label for="myInput">Kata/Kalimat:</label>
-        <input type="text" id="myInput" placeholder="Masukkan Kata/Kalimat" title="Doctor Name">
-    
-        <button id="myBtn" onclick="myFunction()" class="btn btn-primary btn-block containerWidth" style="background-color:rgba(69, 57, 233, 0.774)"><strong>Reveal</strong></button>
-        
+        <form action="/" method="post">
+            {{ form }}
+            <button type="submit">
+              SUBMIT
+            </button>
+        </form>
 </body>
 <script>
-    var input = document.getElementById("myInput");
-    input.addEventListener("keyup", function(event) {
-        event.preventDefault();
-        if (event.keyCode === 13) {
-            document.getElementById("myBtn").click();
-        }
-    });
-
 </script>
 
 </html>

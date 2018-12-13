@@ -21,7 +21,7 @@ def python_writer():
     print(kamus_provinsi, file=out_file)
     out_file.close()
 
-query = "es lilin"
+query = "situmorang"
 
 
 def quque(query):
