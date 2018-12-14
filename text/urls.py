@@ -1,7 +1,6 @@
-from django.urls import re_path, path
-from .views import index,query
-#url for app
+from django.urls import path
+from .views import index
+# url for app
 urlpatterns = [
-    re_path(r'^$', index, name='index'),
-    path(r'query/', query, name='query')
+    path(r'', index, name='index'),
 ]
