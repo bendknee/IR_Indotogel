@@ -122,7 +122,18 @@
         Data dari HTML tersebut, kami extract menjadi sebuah dataset yang diklasifikasikan berdasarkan provinsi.
     </p>
 
-    <h3 align="center"><b>Meet The Team</b></h3>
+        <br>
+
+        <h4 for="the-form"><b>Masukkan Kata/Kalimat:</b></h4>
+        <form action="/" id="the-form">
+            <input id="myInput" type="text" name="query" placeholder="Kata/Kalimat" required>
+            <input id="myBtn" type="submit" value="SUBMIT">
+        </form>
+        {% if chart_data %}
+            <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+        {% endif %}
+
+        <h3 align="center"><b>Meet The Team</b></h3>
     <br>
     <div class="row">
         <div class="columns"></div>
@@ -150,16 +161,6 @@
           </div>
         </div>
       </div>
-        <br>
-
-        <h4 for="the-form"><b>Masukkan Kata/Kalimat:</b></h4>
-        <form action="/" id="the-form">
-            <input id="myInput" type="text" name="query" placeholder="Kata/Kalimat" required>
-            <input id="myBtn" type="submit" value="SUBMIT">
-        </form>
-        {% if chart_data %}
-            <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-        {% endif %}
         <br>
         <br>
     </div>
