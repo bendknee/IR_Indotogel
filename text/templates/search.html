@@ -14,9 +14,8 @@
 
 </head>
 <style>
-    #bodySearch {
+    body, #bodySearch {
         font-family: 'Muli';
-        color :  #68D1D4;
     }
 
     #myInput {
@@ -41,7 +40,7 @@
         height: 50px;
     }
     .containerMargin{
-        margin-left: 2%;
+        margin-left: 4%;
     }
 
     .containerWidth{
@@ -52,6 +51,7 @@
     #myBtn {
         width: 100%;
         font-size: 16px;
+        font-weight: bold;
         padding: 12px 20px 12px 40px;
         border: 1px solid #ddd;
         margin-bottom: 12px;
@@ -59,7 +59,54 @@
         background-color: #36ced4;
         opacity: 0.7;
         border-radius : 20px;
-        box-shadow: 0 2px 4px 0 rgba(64, 64, 64, 0.5), 0 0 4px 0 rgba(0, 0, 0, 0.25);
+    }
+
+        html {
+    box-sizing: border-box;
+    }
+
+    *, *:before, *:after {
+    box-sizing: inherit;
+    }
+
+    .column {
+    float: left;
+    width: 20%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+    }
+
+    .columns {
+    float: left;
+    width: 30%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+    }
+
+
+    @media screen and (max-width: 650px) {
+    .column {
+        width: 100%;
+        display: block;
+    }
+    }
+
+    .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .container {
+    padding: 0 16px;
+    }
+
+    .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+    }
+
+    .title {
+    color: grey;
     }
 
 </style>
@@ -67,15 +114,54 @@
 <body>
     <div class="container containerMargin" id="bodySearch">
 
-        <h1 style="text-align: center; font-size:40px; text-shadow: 1px 0 rgb(82, 231, 236), 0 1px rgb(82, 231, 236), 1px 0 rgb(82, 231, 236), 0 1px rgb(82, 231, 236);" class="jumbotron lead"><strong>IndoTogel</strong></h1>
-        <h4 style="text-align: center; font-size:40px; text-shadow: 1px 0 rgb(82, 231, 236), 0 1px rgb(82, 231, 236), 1px 0 rgb(82, 231, 236), 0 1px rgb(82, 231, 236);" class="lead">Indonesia Traditional Language Analysis</h4>
+        <h1 style="color :  #68D1D4; text-align: center; font-size:40px; text-shadow: 1px 0 rgb(82, 231, 236), 0 1px rgb(82, 231, 236), 1px 0 rgb(82, 231, 236), 0 1px rgb(82, 231, 236);" class="jumbotron lead"><strong>IndoTogel</strong></h1>
+        <p style="font-size:16px;" align="justify"><b>Indotogel atau <i>Indonesia Traditional Language Analysis</i></b> merupakan sebuah aplikasi
+        untuk melakukan klasifikasi teks berupa kata maupun kalimat terhadap bahasa-bahasa daerah di Indonesia. klasifikasi
+        akan berupa multi-label berbentuk pie chart yang akan menunjukkan berapa persen kata tersebut dari daerah tertentu.
+        Dataset kami peroleh dari website <i><b>www.lagu-daerah.com</b></i> Website berisi tentang lagu daerah berdasarkan provinsi yang ada di Indonesia. 
+        Data dari HTML tersebut, kami extract menjadi sebuah dataset yang diklasifikasikan berdasarkan provinsi.
+    </p>
+
+    <h3 align="center"><b>Meet The Team</b></h3>
+    <br>
+    <div class="row">
+        <div class="columns"></div>
+        <div class="column">
+          <div class="card">
+            <img src="https://gitlab.com/uploads/-/system/user/avatar/1578366/avatar.png" alt="Benny" style="width:100%">
+            <div class="container">
+              <h4>Benny William Pardede</h4>
+              <p class="title">Programmer</p>
+              <p>Air Minum Dalam Gelas</p>
+              <p>benny.william@ui.ac.id</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="card">
+            <img src="https://assets.gitlab-static.net/uploads/-/system/user/avatar/1572360/avatar.png?width=90" alt="Luthfi" style="width:100%">
+            <div class="container">
+              <h4>Luthfi Dzaky Saifuddin</h4>
+              <p class="title">Programmer</p>
+              <p>Air Minum Dalam Botol</p>
+              <p>luthfi.dzaky@ui.ac.id</p>
+            </div>
+          </div>
+        </div>
+      </div>
+        <br>
+
+        <h4 for="the-form"><b>Masukkan Kata/Kalimat:</b></h4>
         <form action="/" id="the-form">
-            <input id="myInput" type="text" name="query" placeholder="Kata/Kalimat:" required>
+            <input id="myInput" type="text" name="query" placeholder="Kata/Kalimat" required>
             <input id="myBtn" type="submit" value="SUBMIT">
         </form>
         {% if chart_data %}
             <div id="chartContainer" style="height: 370px; width: 100%;"></div>
         {% endif %}
+        <br>
+        <br>
     </div>
 </body>
 <script type="text/javascript">
@@ -84,7 +170,10 @@
         var chart = new CanvasJS.Chart("chartContainer", {
             animationEnabled: true,
             title: {
-                text: "Hasil Pencarian Provinsi untuk Query: '{{ text|escapejs }}'"
+                text: "Hasil Pencarian Provinsi untuk Query: '{{ text|escapejs }}'",
+                fontSize: 30,
+                fontFamily: "Muli",
+                fontStyle: "Bold"
             },
             data: [{
                 type: "pie",
